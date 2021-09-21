@@ -14,17 +14,21 @@
    View,
    Text
  } from 'react-native';
-import Image from '@src/assests/images/avatars/Allan Munger.png';
+import imageData from '@src/assests/images'
 import { ImageCircle } from '@src/components/elements';
 // console.log(Image)
  const App = () => {
    const [active, setActive] = React.useState(0)
    return (
      <View>
-     <ImageCircle 
-     uri={Image}
-     active={false}
-     />
+       {imageData.map((p) => {
+         return (
+          <ImageCircle 
+          uri={p.path}
+          active={false}
+          />
+         )
+       })}
      </View>
    )
  }

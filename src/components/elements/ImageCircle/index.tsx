@@ -8,7 +8,6 @@ interface Props {
 }
 
 const ImageCircle = ({ active, uri }) => {
-  console.log("uri", uri)
   return (
     <View style={Styles.parentView}>
       <Image source={uri} width={60} height={60} />

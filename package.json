@@ -8,9 +8,11 @@
     "start": "react-native start",
     "test": "jest",
     "prettier:write": "npm run prettier:base -- --write \"src/**/*.{ts,tsx}\"",
-    "staticJson": "node assestsJson.js"
+    "staticJson": "node assestsJson.js",
+    "postinstall": "patch-package"
   },
   "dependencies": {
+    "patch-package": "^6.4.7",
     "react": "17.0.1",
     "react-native": "0.64.2"
   },

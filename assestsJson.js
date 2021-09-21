@@ -17,22 +17,17 @@ fs.readdir(directoryPath, function (err, files) {
     } 
     //listing all files using forEach
     files.forEach(function (file) {
-        if (file !== ".DS_Store") {
+        if (file !== ".DS_Store" && file.indexOf("@") === -1 ) {
             let imageImportPath = file.split(".")[0].split(' ').join('')
             let name = file.split(' ')[0]
-            if (file.indexOf("@") != -1 ) {
-                name = file.split('@')[0]
-                imageImportPath = name.split(' ').join('') + file.split('@')[1].split('.')[0]
-            }
 
-            codeStr = codeStr + `import ${imageImportPath} from "./avatars/${encodeURIComponent(file)}";
+
+            codeStr = codeStr + `import ${imageImportPath} from "./avatars/${file}";
 `             
             if (file.indexOf("@") == -1) {
                 imagesData.push({
                     "name": name,
-                    "path": imageImportPath,
-                    "path2x": `${imageImportPath}2x`,
-                    "path3x": `${imageImportPath}3x`
+                    "path": imageImportPath
                 })
             } 
         }
@@ -46,8 +41,7 @@ imagesData.forEach((el, index) => {
  {
     name: "${el.name}",
     path: ${el.path}, 
-    path2x: ${el.path2x},
-    path3x: ${el.path3x}
+
  }`
 if (index !== imagesData.length  -1) codeStr = codeStr + ','
 })
