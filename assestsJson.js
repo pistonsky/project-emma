@@ -25,7 +25,7 @@ fs.readdir(directoryPath, function (err, files) {
                 imageImportPath = name.split(' ').join('') + file.split('@')[1].split('.')[0]
             }
 
-            codeStr = codeStr + `import ${imageImportPath} from "images/avatars/${file}";
+            codeStr = codeStr + `import ${imageImportPath} from "./avatars/${encodeURIComponent(file)}";
 `             
             if (file.indexOf("@") == -1) {
                 imagesData.push({
