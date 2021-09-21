@@ -1,13 +1,9 @@
 import React from "react"
-import { View, Text, Image, ImageSourcePropType } from "react-native"
+import { View, Image } from "react-native"
 import styles from "./styles"
+import { Props } from "./types"
 
-interface Props {
-  active: boolean
-  uri: string
-}
-
-const ImageCircle = ({ active, uri }) => {
+const ImageCircle = ({ active, uri }: Props) => {
   return (
     <View style={active ? { ...styles.parentView, ...styles.active } : { ...styles.parentView }}>
       <Image source={uri} width={30} height={30} />
