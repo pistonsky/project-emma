@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native"
-import CommonStyles from "@src/constants/style"
+import CommonStyles from "@src/constants/styles"
 export default StyleSheet.create({
   parentView: {
     width: 70,
