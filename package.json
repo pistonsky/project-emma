@@ -8,7 +8,7 @@
     "start": "react-native start",
     "test": "jest",
     "prettier:write": "npm run prettier:base -- --write \"src/**/*.{ts,tsx}\"",
-    "staticJson": "node assestsJson.js",
+    "create-assets": "node assestsCreator.js",
     "postinstall": "patch-package"
   },
   "dependencies": {

@@ -1,6 +1,6 @@
 import React from "react"
 import { View, Text, Image, ImageSourcePropType } from "react-native"
-import Styles from "./styles"
+import styles from "./styles"
 
 interface Props {
   active: boolean
@@ -9,8 +9,8 @@ interface Props {
 
 const ImageCircle = ({ active, uri }) => {
   return (
-    <View style={Styles.parentView}>
-      <Image source={uri} width={60} height={60} />
+    <View style={active ? { ...styles.parentView, ...styles.active } : { ...styles.parentView }}>
+      <Image source={uri} width={30} height={30} />
     </View>
   )
 }

@@ -1,11 +1,17 @@
 import { StyleSheet } from "react-native"
-
+import CommonStyles from "@src/constants/style"
 export default StyleSheet.create({
   parentView: {
-    width: 60,
-    height: 60,
-    borderRadius: 30,
-    borderColor: "red",
-    borderWidth: 1
+    width: 70,
+    height: 70,
+    borderRadius: 35,
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center"
+  },
+  active: {
+    borderWidth: 5,
+    borderColor: CommonStyles.activeRadiusColor
   }
 })
