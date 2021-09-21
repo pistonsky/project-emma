@@ -1,3 +1,4 @@
 export default {
-  activeRadiusColor: "#81D4FA"
+  activeRadiusColor: "#81D4FA",
+  headerDefaultColor: "#EFEBE9"
 }
