@@ -3,7 +3,7 @@ import { View, TouchableWithoutFeedback, Image, ScrollView, Dimensions } from "r
 import { ImageCircle } from "@src/components/elements"
 import styles from "./styles"
 
-const ProfileHorizontalCarousel = ({ active = 0, setActive, profileData }) => {
+const ProfileHorizontalScroll = ({ active = 0, setActive, profileData }) => {
   const { width } = Dimensions.get("window")
   const profileWidth = width * 0.2
   const scrollView = React.useRef(null)
@@ -32,4 +32,4 @@ const ProfileHorizontalCarousel = ({ active = 0, setActive, profileData }) => {
   )
 }
 
-export default ProfileHorizontalCarousel
+export default ProfileHorizontalScroll

@@ -1,2 +1,2 @@
-export { default as ProfileHorizontalCarousel } from "./ProfileHorizontalCarousel"
+export { default as ProfileHorizontalScroll } from "./ProfileHorizontalScroll"
 export { default as Header } from "./Header"
