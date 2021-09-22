@@ -1,3 +1,4 @@
+import { ProfileData } from "./types"
 import AllanMunger from "./avatars/Allan Munger.png"
 import AmandaBrady from "./avatars/Amanda Brady.png"
 import AshleyMcCarthy from "./avatars/Ashley Mc Carthy.png"
@@ -27,7 +28,7 @@ import RobinCounts from "./avatars/Robin Counts.png"
 import TimDeboer from "./avatars/Tim Deboer.png"
 import WandaHoward from "./avatars/Wanda Howard.png"
 
-const imagesData = [
+const imagesData: ProfileData[] = [
   {
     name: "Allan",
     path: AllanMunger,

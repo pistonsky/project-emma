@@ -9,7 +9,8 @@ const fs = require('fs');
 const dummyText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum'
 const directoryPath = path.join(__dirname, '/src/assests/images/avatars');
 const imagesData = []
-let codeStr = ''
+let codeStr = `import {ProfileData} from "./types"
+`
 //passsing directoryPath and callback function
 fs.readdir(directoryPath, function (err, files) {
     //handling error
@@ -35,7 +36,7 @@ fs.readdir(directoryPath, function (err, files) {
     });
     codeStr = codeStr + `
 
-const imagesData = [`
+const imagesData:ProfileData[] = [`
 
 imagesData.forEach((el, index) => {
     codeStr = codeStr + `
@@ -52,12 +53,31 @@ codeStr = codeStr + `
 
 export default imagesData
 ` 
-fs.writeFile('./src/assests/images/index.ts', codeStr, 'utf8', function(err) {
+    fs.writeFile('./src/assests/images/index.ts', codeStr, 'utf8', function(err) {
         if (err) {
           return console.log(err);
         }
-        console.log("The file was saved!");
+        console.log("Assests file was created!");
     });
+
+const imageDataType = `
+import {ImageSourcePropType} from 'react-native'
+
+export interface ProfileData {
+    name: string
+    path: ImageSourcePropType
+    info: string
+}
+`    
+    fs.writeFile('./src/assests/images/types.ts', imageDataType, 'utf8', function(err) {
+        if (err) {
+          return console.log(err);
+        }
+        console.log("Assests types file was created!");
+    });
+
 })
+
+
 
 
