@@ -2,8 +2,9 @@ import React from "react"
 import { View, TouchableWithoutFeedback, Image, ScrollView, Dimensions } from "react-native"
 import { ImageCircle } from "@src/components/elements"
 import styles from "./styles"
+import { Props } from "./types"
 
-const ProfileHorizontalScroll = ({ active = 0, setActive, profileData }) => {
+const ProfileHorizontalScroll = ({ active = 0, setActive, profileData }: Props) => {
   const { width } = Dimensions.get("window")
   const profileWidth = width * 0.2
   const scrollView = React.useRef(null)
