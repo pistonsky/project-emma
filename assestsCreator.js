@@ -32,7 +32,7 @@ fs.readdir(directoryPath, function (err, files) {
     files.forEach(function (file) {
         if (file !== ".DS_Store" && file.indexOf("@") === -1 ) {
             let imageImportPath = file.split(".")[0].split(' ').join('')
-            let name = file.split(' ')[0]
+            let name = file.split('.')[0]
 
 
             codeStr = codeStr + `import ${imageImportPath} from "./avatars/${file}";
