@@ -1,12 +1,12 @@
 import React from "react"
-import { View, SafeAreaView } from "react-native"
+import { View, SafeAreaView, ScrollView } from "react-native"
 import styles from "./styles"
-import { ProfileHorizontalScroll, Header } from "@src/components/layouts/index"
-import ProfileData from "@src/assests/images/index"
+import { Header, ProfileHorizontalScroll } from "@src/components/layouts"
+import ProfileData from "@src/assests/images"
 
 const Home = () => {
   const [activeProfile, setActiveProfile] = React.useState(0)
-
+  const horizontalScrollRef = React.useRef<ScrollView>()
   return (
     <>
       <SafeAreaView style={styles.safeAreaContainer} />
@@ -16,6 +16,7 @@ const Home = () => {
           profileData={ProfileData}
           active={activeProfile}
           setActive={setActiveProfile}
+          scrollViewRef={horizontalScrollRef}
         />
       </View>
     </>
