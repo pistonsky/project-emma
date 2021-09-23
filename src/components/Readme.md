@@ -15,3 +15,5 @@ these elements when passed different props renders different things for example 
 Contains things like navbar, footer, contact us form
 
 These elements are generally meant to render same thing at different places for example Horizontal and vertical scroll
+
+Scroll component have dependency on Home component (for context), this restricts us from using it for other purposes
