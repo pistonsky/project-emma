@@ -2,8 +2,8 @@ import React, { useEffect } from "react"
 import { View, SafeAreaView, ScrollView, Dimensions } from "react-native"
 import styles from "./styles"
 import { Header } from "@src/components/layouts"
-import ProfileHorizontalScroll from "./ProfileHorizontalScroll"
-import ProfileVerticalScroll from "./ProfileVerticalScroll"
+import { ProfileHorizontalScroll, ProfileVerticalScroll } from "@src/components/sections/"
+
 import ProfileData from "@src/assests/images"
 
 export const ThemeContext = React.createContext(null)
