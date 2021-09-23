@@ -1,0 +1,12 @@
+diff --git a/node_modules/metro/src/Assets.js b/node_modules/metro/src/Assets.js
+index 900dcc3..330d0d2 100644
+--- a/node_modules/metro/src/Assets.js
++++ b/node_modules/metro/src/Assets.js
+@@ -191,6 +191,7 @@ function getAbsoluteAssetRecord(_x) {
+ 
+ function _getAbsoluteAssetRecord() {
+   _getAbsoluteAssetRecord = _asyncToGenerator(function*(assetPath) {
++    assetPath = decodeURIComponent(assetPath)
+     let platform =
+       arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+     const filename = path.basename(assetPath);
