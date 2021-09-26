@@ -3,10 +3,8 @@ import { View, SafeAreaView, ScrollView, Dimensions } from "react-native"
 import styles from "./styles"
 import { Header } from "@src/components/layouts"
 import { ProfileHorizontalScroll, ProfileVerticalScroll } from "@src/components/sections/"
-
+import { HomeContext } from "@src/reducers"
 import ProfileData from "@src/assests/images"
-
-export const ThemeContext = React.createContext(null)
 
 const Home = () => {
   const { width } = Dimensions.get("window")
@@ -23,7 +21,7 @@ const Home = () => {
     <>
       <SafeAreaView style={styles.safeAreaContainer} />
       <Header title="Contacts" />
-      <ThemeContext.Provider value={{ theme, setTheme }}>
+      <HomeContext.Provider value={{ theme, setTheme }}>
         <View style={styles.profileContentView}>
           <ProfileHorizontalScroll
             profileData={ProfileData}
@@ -36,7 +34,7 @@ const Home = () => {
             scrollViewRefHoriztontal={horizontalScrollRef}
           />
         </View>
-      </ThemeContext.Provider>
+      </HomeContext.Provider>
     </>
   )
 }

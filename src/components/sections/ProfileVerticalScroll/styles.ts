@@ -1,5 +1,5 @@
 import { StyleSheet, Dimensions } from "react-native"
-import CommonStyles from "@src/constants/styles"
+import CommonStyles from "@src/styles"
 const { width } = Dimensions.get("window")
 
 export default StyleSheet.create({

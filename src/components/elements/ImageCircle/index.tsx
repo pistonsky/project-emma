@@ -3,9 +3,12 @@ import { View, Image } from "react-native"
 import styles from "./styles"
 import { Props } from "./types"
 
-const ImageCircle = ({ active, uri }: Props) => {
+const ImageCircle = ({ active, uri, testId }: Props) => {
   return (
-    <View style={active ? { ...styles.parentView, ...styles.active } : { ...styles.parentView }}>
+    <View
+      testID={testId || "image-circle-non-active"}
+      style={active ? { ...styles.parentView, ...styles.active } : { ...styles.parentView }}
+    >
       <Image source={uri} width={30} height={30} />
     </View>
   )

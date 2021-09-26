@@ -3,11 +3,11 @@ import { View, TouchableWithoutFeedback, ScrollView, Dimensions, Text } from "re
 import { ImageCircle } from "@src/components/elements"
 import styles from "./styles"
 import { Props } from "./types"
-import { ThemeContext } from "@src/screens/Home"
+import { HomeContext } from "@src/reducers"
 
 const ProfileVerticalScroll = ({ profileData, scrollViewRef, scrollViewRefHoriztontal }: Props) => {
   const [userScrolling, setUserScrolling] = React.useState(false)
-  const { theme, setTheme } = React.useContext(ThemeContext)
+  const { theme, setTheme } = React.useContext(HomeContext)
   const { profileWidth, heightOfScrollView, active } = theme
 
   const onLayout = (event) => {
