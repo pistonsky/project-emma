@@ -35,6 +35,7 @@ const ProfileVerticalScroll = ({ profileData, scrollViewRef, scrollViewRefHorizt
 
   return (
     <ScrollView
+      testID={`ProfileVertical`}
       style={styles.scrollView}
       ref={scrollViewRef}
       pagingEnabled

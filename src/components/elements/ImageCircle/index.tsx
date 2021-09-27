@@ -6,7 +6,7 @@ import { Props } from "./types"
 const ImageCircle = ({ active, uri, testId }: Props) => {
   return (
     <View
-      testID={testId || "image-circle-non-active"}
+      testID={`image-circle-${testId}`}
       style={active ? { ...styles.parentView, ...styles.active } : { ...styles.parentView }}
     >
       <Image source={uri} width={30} height={30} />

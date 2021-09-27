@@ -33,11 +33,13 @@ const ProfileHorizontalScroll = ({ profileData, scrollViewRef, scrollViewRefVert
     }
     if (userScrolling) {
       setUserScrolling(false)
+
       scrollViewRefVertical.current?.scrollTo({ y: active * heightOfScrollView, animated: true })
     }
   }
   return (
     <ScrollView
+      testID={`ProfileHorizontal`}
       horizontal={true}
       contentContainerStyle={styles.scrollViewContainer}
       showsHorizontalScrollIndicator={false}
@@ -56,7 +58,7 @@ const ProfileHorizontalScroll = ({ profileData, scrollViewRef, scrollViewRefVert
             onPress={() => onProfileTouched(index)}
           >
             <View style={styles.imageCircle}>
-              <ImageCircle uri={profile.path} active={index === active} />
+              <ImageCircle testId={index} uri={profile.path} active={index === active} />
             </View>
           </TouchableWithoutFeedback>
         )
