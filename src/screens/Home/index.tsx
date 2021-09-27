@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React from "react"
 import { View, SafeAreaView, ScrollView, Dimensions } from "react-native"
 import styles from "./styles"
 import { Header } from "@src/components/layouts"
