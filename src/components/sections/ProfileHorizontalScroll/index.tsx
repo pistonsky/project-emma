@@ -23,7 +23,7 @@ const ProfileHorizontalScroll = ({ profileData, scrollViewRef, scrollViewRefVert
       const position = event.nativeEvent.contentOffset.x / profileWidth
       const active = Math.round(position)
       setTheme({ ...theme, active })
-      scrollViewRefVertical.current?.scrollTo({ y: position * heightOfScrollView, animated: true })
+      scrollViewRefVertical.current?.scrollTo({ y: position * heightOfScrollView, animated: false })
     }
   }
 
@@ -34,7 +34,7 @@ const ProfileHorizontalScroll = ({ profileData, scrollViewRef, scrollViewRefVert
     if (userScrolling) {
       setUserScrolling(false)
 
-      scrollViewRefVertical.current?.scrollTo({ y: active * heightOfScrollView, animated: true })
+      scrollViewRefVertical.current?.scrollTo({ y: active * heightOfScrollView, animated: false })
     }
   }
   return (

@@ -21,7 +21,7 @@ const ProfileVerticalScroll = ({ profileData, scrollViewRef, scrollViewRefHorizt
     if (userScrolling) {
       const position = event.nativeEvent.contentOffset.y / heightOfScrollView
       const active = Math.round(position)
-      scrollViewRefHoriztontal.current?.scrollTo({ x: position * profileWidth, animated: true })
+      scrollViewRefHoriztontal.current?.scrollTo({ x: position * profileWidth, animated: false })
       setTheme({ ...theme, active })
     }
   }
@@ -29,7 +29,7 @@ const ProfileVerticalScroll = ({ profileData, scrollViewRef, scrollViewRefHorizt
   const onScrollEnd = () => {
     if (userScrolling) {
       setUserScrolling(false)
-      scrollViewRefHoriztontal.current?.scrollTo({ x: active * profileWidth, animated: true })
+      scrollViewRefHoriztontal.current?.scrollTo({ x: active * profileWidth, animated: false })
     }
   }
 
